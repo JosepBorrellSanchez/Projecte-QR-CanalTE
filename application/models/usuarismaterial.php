@@ -14,6 +14,36 @@ Class usuarismaterial extends CI_Model
         }
    return $usuaris;
 }
+
+function insertarsortida($idusuari, $equips, $contador, $diahora){
+
+	$data=array(
+	'ID_usuari' => $idusuari,
+	'Equips' => $equips,
+	'Horadesortida' => $diahora);
+
+	$datausuari=array(
+	
+	'Contador' => $contador);
+	 
+	
+	$this->db->insert('Sortides_temp', $data);
+	$this->db->where('ID_usuari', $idusuari);
+	$this->db->update('Usuaris', $datausuari);
+	
+}
+
+function getContador($idusuari)
+ {
+   $this->db->select('Contador');
+   $this->db->from('Usuaris');
+   $this->db->where('ID_usuari', $idusuari);
+
+   return $this->db->get()->row()->Contador;
+}
+
+
+
     
 /*
  function registre($dades)
