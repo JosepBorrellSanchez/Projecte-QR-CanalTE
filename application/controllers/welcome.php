@@ -31,12 +31,6 @@ parent::__construct();
 	}
 	
 	
-	public function crearsortida()
-	{
-		$idusuari = $this->input->post('Noms');
-		$this->load->view('sortida', $ids);
-	}
-	
 	
 	
 	
