@@ -16,20 +16,23 @@ Class usuarismaterial extends CI_Model
 }
 
 function insertarsortida($idusuari, $equips, $contador, $diahora){
-
-	$data=array(
-	'ID_usuari' => $idusuari,
-	'Equips' => $equips,
-	'Horadesortida' => $diahora);
-
-	$datausuari=array(
 	
-	'Contador' => $contador);
+	foreach ($equips as $row){
+		$data=array(
+			'ID_usuari' => $idusuari,
+			'Equip' => $row,
+			'Horadesortida' => $diahora);
+			
+		$this->db->insert('Sortides_temp', $data);
+	}
+
+		$datausuari=array(
+			'Contador' => $contador);
 	 
 	
-	$this->db->insert('Sortides_temp', $data);
 	$this->db->where('ID_usuari', $idusuari);
 	$this->db->update('Usuaris', $datausuari);
+	
 	
 }
 
@@ -42,8 +45,38 @@ function getContador($idusuari)
    return $this->db->get()->row()->Contador;
 }
 
+function getEquipsOcupats($row)
+{
+	$this->db->select('Equip');
+	$this->db->from('Sortides_temp');
+	$this->db->where('ID_equip', $row);
+	
+	return $this->db->get()->result();
+}
 
+function getEquipsUsuari($idusuari)
+{
+	$this->db->select('Equip');
+	$this->db->from('Sortides_temp');
+	$this->db->where('ID_usuari', $idusuari);
+	
+	return $this->db->get()->result();
+}
 
+function insertarRegistre($id_usuari, $id_equip, $horadesortida, $diahora)
+{
+	$data = array(
+		'ID_usuari' => $id_usuari,
+		'ID_equip' => $id_equip,
+		'Horaentrada' => $diahora,
+		'Horasortida' => $horadesortida);
+	
+	
+	$this->db->insert('Equip', $data);
+}
+   
+    
+    
     
 /*
  function registre($dades)

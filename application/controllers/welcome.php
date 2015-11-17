@@ -30,6 +30,14 @@ parent::__construct();
 		$this->load->view('sortida', $ids);
 	}
 	
+	public function entrada()
+	{
+		$ids = array(
+               "usuaris" => $this->usuarismaterial->llistarIDs()
+            );
+		$this->load->view('entrada', $ids);
+	}
+	
 	
 	
 	

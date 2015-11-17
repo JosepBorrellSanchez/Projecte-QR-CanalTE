@@ -20,29 +20,31 @@ class crearsortida extends CI_Controller {
 			$idusuari = $this->input->post('Noms');
 			$contador=$this->usuarismaterial->getContador($idusuari);
 			if ($this->input->post('1') == "accept") {
-				$equips = "1";
+				$equips = array(1);
+				
 				$contador = $contador +1;
 			}
 		
 			if ($this->input->post('2') == "accept") {
-				$equips = $equips." 2";
+				array_push($equips,2);
 				$contador = $contador +1;
 			}
 		
 			if ($this->input->post('3') == "accept") {
-				$equips = $equips." 3";
+				array_push($equips,3);
 				$contador = $contador +1;
 			}
 		
 			if ($this->input->post('4') == "accept") {
-				$equips = $equips." 4";
+				array_push($equips,4);
 				$contador = $contador +1;
 			}
 		
 			if ($this->input->post('5') == "accept") {
-				$equips = $equips." 5";
+				array_push($equips,5);
 				$contador = $contador +1;
 			}
+			var_dump($equips);
 			
 			$diahora=date('l jS \of F Y h:i:s A');
 						

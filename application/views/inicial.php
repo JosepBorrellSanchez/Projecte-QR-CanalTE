@@ -7,7 +7,7 @@
 <br>
 <br>
 <br>
-<button type="button" onclick="alert('Hello world!')">Entrada</button>
+<a href="/projecte/index.php/welcome/entrada"><button type="button">Entrada</button>
 <br>
 <br>
 <br>
