@@ -78,6 +78,15 @@ function insertarRegistre($id_usuari, $id_equip, $horadesortida, $diahora)
 	$this->db->insert('Registre', $data);
 }
    
+   
+function eliminarTemporal($id_usuari){
+	$data = array(
+		'ID_usuari' => $id_usuari);
+	$this->db->delete('Sortides_temp', $data);
+ 	$this->db->where('ID_usuari', $id_usuari);
+ 	
+}    
+    
     
     
     

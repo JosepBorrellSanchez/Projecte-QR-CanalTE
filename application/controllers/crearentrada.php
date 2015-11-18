@@ -40,8 +40,11 @@ class crearentrada extends CI_Controller {
 				$this->usuarismaterial->insertarRegistre($id_usuari, $id_equip, $horadesortida, $diahora);
 				
 				//me carrego lo temporal
+				//nomes me falta aixo!!
+				
 				
 			}
+			$this->usuarismaterial->eliminarTemporal($id_usuari);
 			
 			$this->load->view('gracies');
 		}
