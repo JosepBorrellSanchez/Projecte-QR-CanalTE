@@ -44,19 +44,22 @@ function getContador($idusuari)
 
    return $this->db->get()->row()->Contador;
 }
-
+/*
 function getEquipsOcupats($row)
 {
 	$this->db->select('Equip');
 	$this->db->from('Sortides_temp');
-	$this->db->where('ID_equip', $row);
+	
 	
 	return $this->db->get()->result();
 }
+* */
 
 function getEquipsUsuari($idusuari)
 {
 	$this->db->select('Equip');
+	$this->db->select('ID_usuari');
+	$this->db->select('Horadesortida');
 	$this->db->from('Sortides_temp');
 	$this->db->where('ID_usuari', $idusuari);
 	
@@ -72,7 +75,7 @@ function insertarRegistre($id_usuari, $id_equip, $horadesortida, $diahora)
 		'Horasortida' => $horadesortida);
 	
 	
-	$this->db->insert('Equip', $data);
+	$this->db->insert('Registre', $data);
 }
    
     

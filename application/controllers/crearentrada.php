@@ -24,14 +24,17 @@ class crearentrada extends CI_Controller {
 			//primer tinc que agafar totes les dades de la taula temp de este usuari
 			
 			$equipsocupats = $this->usuarismaterial->getEquipsUsuari($idusuari);
+			//var_dump($equipsocupats);
 						
 			foreach ($equipsocupats as $row) {
 				//agafo les dades
-				$dades=$this->usuarismaterial->getEquipsOcupats($row);
+				//$dades=$this->usuarismaterial->getEquipsOcupats($row);
 				
-				$id_usuari = $dades->ID_usuari;
-				$id_equip = $dades->Equip;
-				$horadesortida = $dades->Horadesortida;
+			//	var_dump($row->ID_usuari);
+				$id_usuari = $row->ID_usuari;
+				$id_equip = $row->Equip;
+				//var_dump($id_equip);
+				$horadesortida = $row->Horadesortida;
 				
 				//inserto registres
 				$this->usuarismaterial->insertarRegistre($id_usuari, $id_equip, $horadesortida, $diahora);
@@ -39,8 +42,6 @@ class crearentrada extends CI_Controller {
 				//me carrego lo temporal
 				
 			}
-						
-			$this->usuarismaterial->insertarentrada($idusuari, $equips, $contador, $diahora);
 			
 			$this->load->view('gracies');
 		}
