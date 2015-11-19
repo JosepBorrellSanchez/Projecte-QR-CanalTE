@@ -81,9 +81,16 @@ class crearsortida extends CI_Controller {
 			
 			$diahora=date('l jS \of F Y h:i:s A');
 						
-			$this->usuarismaterial->insertarsortida($idusuari, $equips, $contador, $diahora);
+			if ($equips != NULL){			
+				$this->usuarismaterial->insertarsortida($idusuari, $equips, $contador, $diahora);
+				$usuari = $this->usuarismaterial->veurenomdusuari($idusuari);
+				$this->load->view('gracies', $usuari);}
 			
-			$this->load->view('gracies');
+			else{
+				$usuari = $this->usuarismaterial->veurenomdusuari($idusuari);
+				$this->load->view('noequipseleccionat', $usuari);
+				
+			}
 		}
 	}
 }

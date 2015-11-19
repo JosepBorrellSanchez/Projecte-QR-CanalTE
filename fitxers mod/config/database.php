@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'mysql.hostinger.es';
-$db['default']['username'] = 'u107035265_josep';
+$db['default']['hostname'] = 'infoworld.cat';
+$db['default']['username'] = 'josep';
 $db['default']['password'] = 'donpimpon93';
-$db['default']['database'] = 'u107035265_pro';
+$db['default']['database'] = 'Material Canal TE';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -9,8 +9,15 @@
 
 </head>
 <body id="main_body" >
-	
-Moltes gràcies.
+<center>
+	<br>
+	<br>
+Moltes gràcies, que tinguis un bon dia , <?php echo $this->_ci_cached_vars['Nom'] ?> .
+<br>
+<br>
+<br>
+<a href=<?php echo base_url()?>><button type="button">Inici</button>
 
+</center>
 	</body>
 </html>

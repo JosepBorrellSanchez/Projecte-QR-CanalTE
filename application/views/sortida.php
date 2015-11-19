@@ -26,21 +26,22 @@
 		<label class="description" for="element_1">Usuari </label>
 		<div>
 		<?php echo form_dropdown('Noms', $usuaris, 'Qui ets?', 'id="ID_usuari"');?>
+		</li>
+		<br>
+		<li id="li_2" ><label class="description" for="element_2">Equips </label> <br>
+		<br>
 		
-		
-
+		<? foreach ($equips as $row => $value) { ?>
+			<label class="description" for="element_2"><?php echo $value->ID_Equip ?>
+			 <?php echo form_checkbox($value->ID_Equip, 'accept', FALSE);?> <br>
+			
+			<?php } ?>
+			
+			<?php if (sizeof($equips) == 0) { echo "No hi ha equips disponibles";} ?>
 		</select>
 		</div> 
 		<br>
-		</li>		<li id="li_2" >
-		<label class="description" for="element_2">Equips </label> <br>
-		
-		<label class="description" for="element_2">1 </label> <?php echo form_checkbox('1', 'accept', FALSE);?> <br>
-		<label class="description" for="element_2">2 </label><?php echo form_checkbox('2', 'accept', FALSE);?> <br>
-		<label class="description" for="element_2">3 </label><?php echo form_checkbox('3', 'accept', FALSE);?> <br>
-		<label class="description" for="element_2">4 </label><?php echo form_checkbox('4', 'accept', FALSE);?> <br>
-		<label class="description" for="element_2">Reflex </label><?php echo form_checkbox('5', 'accept', FALSE);?>
-		
+		</li>	
 		<br>
 		</li>
 			

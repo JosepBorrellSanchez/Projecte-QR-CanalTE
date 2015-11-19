@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://borrellprojecte.esy.es/';
+$config['base_url']	= 'http://www.infoworld.cat/material';
 
 /*
 |--------------------------------------------------------------------------
