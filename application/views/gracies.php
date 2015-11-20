@@ -12,7 +12,7 @@
 <center>
 	<br>
 	<br>
-Moltes gràcies, que tinguis un bon dia , <?php echo $this->_ci_cached_vars['Nom'] ?> .
+Moltes gràcies, que tinguis un bon dia, <?php echo $this->_ci_cached_vars['Nom'] ?> .
 <br>
 <br>
 <br>

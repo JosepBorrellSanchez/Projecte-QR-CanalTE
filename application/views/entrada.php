@@ -3,16 +3,15 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Sortida de material</title>
+<title>Entrada de material</title>
 <link rel="stylesheet" type="text/css" href="view.css" media="all">
 
 </head>
 <body id="main_body" >
-	
-	<img id="top" src="top.png" alt="">
+
 	<div id="form_container">
 	
-		<h1><a>Sortida de material</a></h1>
+		<h1><a>Entrada de material</a></h1>
 		<?php echo validation_errors(); ?>
 
 		<?php echo form_open('crearentrada'); ?>

@@ -7,11 +7,11 @@
 <br>
 <br>
 <br>
-<a href="/projecte/index.php/welcome/entrada"><button type="button">Entrada</button>
+<a href=<?php echo site_url('welcome/Entrada');?>><button type="button">Entrada</button>
 <br>
 <br>
 <br>
-<a href="/projecte/index.php/welcome/sortida"><button type="button">Sortida</button>
+<a href=<?php echo site_url('welcome/sortida');?>><button type="button">Sortida</button>
 </center>
 </body>
 </html>

@@ -46,7 +46,9 @@ class crearentrada extends CI_Controller {
 			}
 			$this->usuarismaterial->eliminarTemporal($id_usuari);
 			
-			$this->load->view('gracies');
+			$usuari = $this->usuarismaterial->veurenomdusuari($id_usuari);
+			$this->load->view('gracies', $usuari);
+		
 		}
 	}
 }
