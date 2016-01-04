@@ -6,6 +6,7 @@ parent::__construct();
 	$this->load->database(); // Carreguem la base de dades
 	$this->load->library('form_validation'); // La llibreria per fer els camps requerits
 	$this->load->model('usuarismaterial');
+	$this->load->helper('url');
 	
 }
 	/**
@@ -14,7 +15,15 @@ parent::__construct();
 	 */
 	public function index()
 	{
-	 $this->load->view('inicial');
+		
+		// que mire si hi ha algun usuari per fer una entrada, si no hi ha cap redirect cap a sortida
+	 $users=$this->usuarismaterial->mirarTemporal();
+	 //var_dump($users);
+	 	if($users == null) {
+			redirect('/welcome/sortida/', 'refresh');
+			}
+		else{	
+	 $this->load->view('inicial');}
 	}
 
 	public function sortida()
@@ -30,7 +39,7 @@ parent::__construct();
 	public function entrada()
 	{
 		$ids = array(
-               "usuaris" => $this->usuarismaterial->llistarIDs()
+               "usuaris" => $this->usuarismaterial->getUsuarisAmbEquips()
             );
 		$this->load->view('entrada', $ids);
 	}

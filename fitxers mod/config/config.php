@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.infoworld.cat/material';
+$config['base_url']	= 'http://material.cterresdelebre.com';
 
 /*
 |--------------------------------------------------------------------------

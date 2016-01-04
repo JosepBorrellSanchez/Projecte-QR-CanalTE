@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'infoworld.cat';
-$db['default']['username'] = 'canalte';
+$db['default']['hostname'] = 'db602496523.db.1and1.com';
+$db['default']['username'] = 'dbo602496523';
 $db['default']['password'] = 'donpimpon93';
-$db['default']['database'] = 'Material_Canal_TE';
+$db['default']['database'] = 'db602496523';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

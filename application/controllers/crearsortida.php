@@ -10,13 +10,6 @@ class crearsortida extends CI_Controller {
 		$this->load->model('usuarismaterial');
 				
 
-		if ($this->form_validation->run() == FALSE)
-		{
-			$this->load->view('sortida');
-		}
-		else
-		{
-			
 			$idusuari = $this->input->post('Noms');
 			$contador=$this->usuarismaterial->getContador($idusuari);
 			$equips = null;
@@ -91,7 +84,6 @@ class crearsortida extends CI_Controller {
 				$this->load->view('noequipseleccionat', $usuari);
 				
 			}
-		}
 	}
 }
 ?>

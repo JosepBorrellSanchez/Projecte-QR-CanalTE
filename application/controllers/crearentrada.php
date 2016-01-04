@@ -12,7 +12,8 @@ class crearentrada extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('entrada');
+			//$usuari = $this->usuarismaterial->getUsuarisAmbEquips();
+			$this->load->view('entrada', $usuari);
 		}
 		else
 		{

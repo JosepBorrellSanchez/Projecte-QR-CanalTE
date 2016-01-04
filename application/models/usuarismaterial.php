@@ -30,6 +30,12 @@ Class usuarismaterial extends CI_Model
 	 return $query->result();
  }
  
+ function mirarTemporal(){
+	 $this->db->select('*');
+	 $this->db->from('Sortides_temp');
+	 return $this->db->get()->result(); }
+	 
+ 
  function veurenomdusuari($idusuari)
  {
 	 $this->db->select('Nom');
@@ -42,7 +48,6 @@ Class usuarismaterial extends CI_Model
 	 
  
  function insertarsortida($idusuari, $equips, $contador, $diahora){
-	 var_dump($equips);
 	
 	foreach ($equips as $row){
 		$data=array(
@@ -94,6 +99,24 @@ Class usuarismaterial extends CI_Model
 	
 	$this->db->insert('Registre', $data);
  } 
+ 
+ function getUsuarisAmbEquips()
+ {
+	 $this->db->select('Usuaris.ID_usuari');
+	 $this->db->select('Usuaris.Nom');
+	 $this->db->from('Usuaris');
+	 $this->db->join('Sortides_temp','Sortides_temp.ID_usuari = Usuaris.ID_usuari');
+	 $this->db->distinct();
+	 
+	 $query = $this->db->get();
+   
+   foreach($query->result_array() as $row){
+            $usuaris[$row['ID_usuari']]=$row['Nom'];
+        }
+   return $usuaris;
+	 //SELECT DISTINCT Usuaris.Nom from Usuaris INNER JOIN Sortides_temp ON Sortides_temp.ID_usuari=Usuaris.ID_usuari'
+
+ }
    
    
  function eliminarTemporal($id_usuari){

@@ -30,24 +30,28 @@
 		<li id="li_2" ><label class="description" for="element_2">Equips </label> <br>
 		<br>
 		
-		<? foreach ($equips as $row => $value) { ?>
+		<?php if (sizeof($equips) != 0) {  
+		 foreach ($equips as $row => $value) { ?>
 			<label class="description" for="element_2"><?php echo $value->ID_Equip ?>
-			 <?php echo form_checkbox($value->ID_Equip, 'accept', FALSE);?> <br>
-			
-			<?php } ?>
-			
-			<?php if (sizeof($equips) == 0) { echo "No hi ha equips disponibles";} ?>
+			 <?php echo form_checkbox($value->ID_Equip, 'accept', FALSE);?> <br> <?php } ?>
+			<input type="hidden" name="form_id" value="1070892" />
+			<br>
+			    
+				<input id="saveForm" class="button_text" type="submit" name="acceptar" value="Acceptar" />
 		</select>
 		</div> 
 		<br>
 		</li>	
 		<br>
 		</li>
-			
-					<br>
-			    <input type="hidden" name="form_id" value="1070892" />
-			    
-				<input id="saveForm" class="button_text" type="submit" name="acceptar" value="Acceptar" />
+		
+				
+				<?php }
+				
+				else { echo "No hi ha equips disponibles"; } ?>
+				
+				
+				
 		</li>
 			</ul>
 		</form>
